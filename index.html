@@ -119,6 +119,13 @@
                             }else{
                             $('#wu_remaining').val();
                         }
+                            if(unit<0){
+                            var result = "你認為會有「負數」出現嗎？";
+                            $('#total').val(result);
+                            $('#unit').val(result);
+                            }else{
+                            $('#total').val(total);
+                        }
                     }); 
                     }); 
                 </script>
