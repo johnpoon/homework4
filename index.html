@@ -1,1 +1,127 @@
 
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Homework 4 </title>
+
+</head>
+
+    
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12  col-sm-12 col-xs-12">
+                 <h1> 第五屆香港特別行政長官選舉</h1>
+                      <h2> by John Poon </h2>
+              </div>
+          </div>
+        </div>
+</head>
+
+<body>
+        <div class="container">
+        <div class="page-header">
+           <div class="col-md-6 col-sm-12 col-xs-12">
+                    <h3>
+                        今屆選舉委員會委員人數共1194人，
+                        <br>
+                        要當選成為行政長官，
+                        <br>
+                        需要獲得601名選委支持 。</h3>
+                        <br>
+                        <br>
+                <img src="http://img.caijing.com.cn/2012-03-26/111776080.jpg" alt="CE candidates" height="300px">
+</div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <br>
+                <div>
+                            <label for="amount">所需獲得提名票數量</label>
+                            <input class="form-control" type="text" id="amount" readonly="" value="601">
+                            <br>
+                            <label for="unit">參選人獲得票數</label>
+                            <input class="form-control" type="text" id="unit" value="580">
+                            <br>
+                        <button class="btn btn-primary" id="calculate">計算</button>
+                        <br>
+                        <br>
+                            <label for="total">你還需要票數：</label>
+                            <input class="form-control" type="text" id="total" readonly="">
+                            <br>
+
+                            林鄭月娥取得580提名票，她還需要多少票才能當選？在「參選人獲得票數」輸入580。
+                            <br>
+                             <input class="form-control" type="text" id="carrie_remaining" readonly="">
+
+                            <br>
+
+                            曾俊華取得160提名票，她還需要多少票才能當選？在「參選人獲得票數」輸入160。
+                            <br>
+                             <input class="form-control" type="text" id="tsang_remaining" readonly="">
+
+                             <br>
+
+                            胡國興取得180提名票，她還需要多少票才能當選？在「參選人獲得票數」輸入160。
+                            <br>
+                             <input class="form-control" type="text" id="wu_remaining" readonly="">
+
+                             <br>
+                             </div>
+                             </div>
+                             </div>
+
+
+
+                <script>
+                   $(function() { 
+                        $('#calculate').click(function() { 
+                            var amount = $('#amount').val();
+                            var unit = $('#unit').val();
+                            var total = amount - unit;
+                            $('#total').val(total);
+                            if(total<=0){
+                            var result = "恭喜你當選香港特別行政區第五屆行政長官";
+                            $('#total').val(result);
+                            }else{
+                            $('#total').val(total);
+                        }
+                           if(total==21){
+                            var carrie_yes = "沒錯，就是21票！試輸入其他參選人獲得票數看看";
+                            $('#carrie_remaining').val(carrie_yes);
+                            }else{
+                            $('#carrie_remaining').val();
+                        }
+                           if(unit>1194){
+                            var wrong = "ERROR！本屆選舉委員會委員人數只有1194人！";
+                            $('#total').val(wrong);
+                            }else{
+                            $('#total').val(total);
+                        }
+                           if(total==441){
+                            var tsang_yes = "沒錯，就是441票！試輸入其他參選人獲得票數看看";
+                            $('#tsang_remaining').val(tsang_yes);
+                            }else{
+                            $('#tsang_remaining').val();
+                        }
+                           if(total==180){
+                            var wu_yes = "沒錯，就是421票！試輸入其他參選人獲得票數看看";
+                            $('#wu_remaining').val(wu_yes);
+                            }else{
+                            $('#wu_remaining').val();
+                        }
+                    }); 
+                    }); 
+                </script>
+</body>
+
+
