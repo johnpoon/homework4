@@ -89,7 +89,7 @@
                             var unit = $('#unit').val();
                             var total = amount - unit;
                             $('#total').val(total);
-                            if(total<=0){
+                            if(total<0&&total==0){
                             var result = "恭喜你當選香港特別行政區第五屆行政長官";
                             $('#total').val(result);
                             }else{
